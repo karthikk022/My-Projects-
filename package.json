@@ -1,0 +1,41 @@
+{
+  "name": "ai-super-app",
+  "version": "1.0.0",
+  "description": "AI-powered super app with multiple intelligent agents for daily tasks",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run mobile:start\"",
+    "server:dev": "cd server && npm run dev",
+    "server:start": "cd server && npm start",
+    "mobile:start": "cd mobile && npm start",
+    "mobile:android": "cd mobile && npm run android",
+    "mobile:ios": "cd mobile && npm run ios",
+    "install:all": "npm install && cd server && npm install && cd ../mobile && npm install",
+    "build": "cd server && npm run build",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "keywords": [
+    "ai",
+    "super-app",
+    "multi-agent",
+    "chatbot",
+    "food-ordering",
+    "travel-booking",
+    "cab-booking",
+    "shopping"
+  ],
+  "author": "AI Super App Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "server",
+    "mobile"
+  ]
+}
